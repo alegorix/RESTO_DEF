@@ -4,7 +4,7 @@ session_start();
 
 // Est-ce que l'id existe et n'est pas vide dans l'URL
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect.php');
+    require_once('../php/connect.php');
 
     // On nettoie l'id envoyé
     $id_plat = strip_tags($_GET['id']);

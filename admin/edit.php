@@ -8,7 +8,7 @@ if($_POST){
     && isset($_POST['prix_plat']) && !empty($_POST['prix_plat'])
     ){
         // On inclut la connexion à la base
-        require_once('connect.php');
+        require_once('../php/connect.php');
 
         // On nettoie les données envoyées
         $id_plat = strip_tags($_POST['id_plat']);
@@ -26,7 +26,7 @@ if($_POST){
         $query->execute();
 
         $_SESSION['message'] = "Plat modifié";
-        require_once('close.php');
+        require_once('../php/close.php');
 
         header('Location: index.php');
     }else{
@@ -36,7 +36,7 @@ if($_POST){
 
 // Est-ce que l'id existe et n'est pas vide dans l'URL
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect.php');
+    require_once('../php/connect.php');
 
     // On nettoie l'id envoyé
     $id_plat = strip_tags($_GET['id']);

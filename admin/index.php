@@ -3,7 +3,7 @@
 session_start();
 
 // On inclut la connexion à la base
-require_once('connect.php');
+require_once('../php/connect.php');
 
 // SELECT de la table tbl_menu avec une jonction de la table tbl_type_plat pour pouvoir afficher les noms des types de plats (entrées, plats, desserts...)
 $sql = 'SELECT * FROM `tbl_menu` JOIN `tbl_type_plat` ON tbl_menu.type_plat = tbl_type_plat.id_type_plat';
@@ -18,7 +18,7 @@ $query->execute();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
-require_once('close.php');
+require_once('../php/close.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">

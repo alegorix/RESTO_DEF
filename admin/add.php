@@ -28,7 +28,7 @@ if($_POST){
 
 
         // On inclut la connexion à la base
-        require_once('connect.php');
+        require_once('../php/connect.php');
 
         // On nettoie les données envoyées
         $nom_plat = strip_tags($_POST['nom_plat']);
