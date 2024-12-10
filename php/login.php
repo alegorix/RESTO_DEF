@@ -35,8 +35,6 @@ if(isset($_POST['user_email']) &&
           //if is_admin ????
           $is_admin =  $user['is_admin'];
 
-
-
           if($user_email === $uemail){
              if(password_verify($upassword, $user_password)){
                  $_SESSION['id_user'] = $id_user;
@@ -65,7 +63,6 @@ if(isset($_POST['user_email']) &&
          exit;
       }
     }
-
 
 }else {
 	header("Location: ../login.php?error=error");
