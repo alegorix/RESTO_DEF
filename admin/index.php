@@ -1,6 +1,8 @@
-<?php
-// On démarre une session
+<?php 
 session_start();
+
+if (isset($_SESSION['id_user']) && isset($_SESSION['user_prenom']) && ($_SESSION['is_admin']==1)) {
+
 
 // On inclut la connexion à la base
 require_once('../php/connect.php');
@@ -87,3 +89,7 @@ require_once('../php/close.php');
     </main>
 </body>
 </html>
+<?php }else {
+	header("Location: ../login.php");
+	exit;
+} ?>
