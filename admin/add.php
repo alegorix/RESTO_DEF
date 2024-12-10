@@ -10,8 +10,8 @@ if($_POST){
 
 
 
-        $currentDirectory = getcwd();
-        $uploadDirectory = "/images/";
+        //$currentDirectory = getcwd();
+        $uploadDirectory = "../images/";
     
     
         //$fileExtensionsAllowed = ['jpeg','jpg','png']; // These will be the only file extensions allowed 
@@ -22,7 +22,7 @@ if($_POST){
         //$fileType = $_FILES['image']['type'];
         //$fileExtension = strtolower(end(explode('.',$fileName)));
     
-        $uploadPath = $currentDirectory . $uploadDirectory . basename($fileName); 
+        $uploadPath = $uploadDirectory . basename($fileName); 
     
         $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
 
@@ -49,7 +49,7 @@ if($_POST){
         $query->execute();
 
         $_SESSION['message'] = "Plat ajouté";
-        require_once('close.php');
+        require_once('../php/close.php');
 
         header('Location: index.php');
     }else{
@@ -93,7 +93,7 @@ if($_POST){
                     </div>
                    
                     <?php
-        require_once('connect.php');
+        require_once('../php/connect.php');
         $sql = "SELECT * FROM  tbl_type_plat";
   $query = $db->prepare($sql);
 $query->execute();

@@ -29,9 +29,40 @@ require_once('../php/close.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des produits</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Administration</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Tableau de bord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../logout.php">Déconnexion</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+     
+      </ul>
+      
+    </div>
+  </div>
+</nav>
     <main class="container">
         <div class="row">
             <section class="col-12">
@@ -74,7 +105,7 @@ require_once('../php/close.php');
                                 <td><?= $menu['nom_plat'] ?></td>
                                 <td><?= $menu['desc_plat'] ?></td>
                                 <td><?= $menu['prix_plat'] ?> €</td>
-                                <td><img height="20px" alt="photo du plat" src="images/<?= $menu['photo_plat'] ?>"></td>
+                                <td><img height="20px" alt="photo du plat" src="../images/<?= $menu['photo_plat'] ?>"></td>
                                 <td><?= $menu['menu_active'] ?></td>
                                 <td><a href="disable.php?id=<?= $menu['id_plat'] ?>">A/D</a> <a href="details.php?id=<?= $menu['id_plat'] ?>">Voir</a> <a href="edit.php?id=<?= $menu['id_plat'] ?>">Modifier</a> <a href="delete.php?id=<?= $menu['id_plat'] ?>">Supprimer</a></td>
                             </tr>
@@ -87,6 +118,8 @@ require_once('../php/close.php');
             </section>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
 <?php }else {
