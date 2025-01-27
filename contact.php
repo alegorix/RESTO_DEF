@@ -1,10 +1,37 @@
+<?php
+// On démarre une session
+session_start();
+$page = 'contact';
+$titre = 'Contactez le restaurant';
+?>
 <?php include('head.php'); ?>
 <?php include('nav.php'); ?>
     <div class="container">
         <h1>Contactez-nous</h1>
         <div class="row">
             <div class="col-md-6">
-                <form method="post">
+            <?php
+                    if(!empty($_SESSION['erreur'])){
+                        echo '<div class="alert alert-danger" role="alert">
+                                '. $_SESSION['erreur'].'
+                            </div>';
+                        $_SESSION['erreur'] = "";
+                    }
+                ?>
+                <?php
+                    if(!empty($_SESSION['merci'])){
+                        echo '<div class="alert alert-success" role="alert">
+                                '. $_SESSION['merci'].'
+                            </div>';
+                        $_SESSION['merci'] = "";
+                    }
+                ?>
+
+
+
+
+
+                <form method="post" action="traitement_contact.php">
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="nom" name="nom">
